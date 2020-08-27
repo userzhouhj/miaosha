@@ -1,0 +1,30 @@
+server:
+  port: 8001
+spring:
+  profiles:
+    active: dev
+  application:
+    name: miaosha-user
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/miaosha?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  #整合redis的基本配置
+  redis:
+    port: 6379
+    host: 39.97.172.233
+    password: 15030619382ZHOU
+    lettuce:
+      pool:
+        max-idle: 5
+        max-active: 64
+        min-idle: 0
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.jun.user.entity
+  mapper-locations: classpath:mapper/*.xml
